@@ -8,17 +8,26 @@ namespace dayOfWeek2
     {
     class Program
     {
+        static Boolean DayCalc(DateTime indata)
+        {
+            int x = (int)indata.DayOfWeek;
+            if ((x==0)||(x==6))
+                { return false;}
+            else { return true; }
+        }
+
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.GetEncoding(1251);
+            //переписать кодирвоку!!! 
+            //Console.OutputEncoding = Encoding.GetEncoding(1251);
+
             Console.Write("Введите дату в формате ГГ/ММ/ДД или ДД/ММ/ГГГ (или как Вам будет удобно): ");
             String stDate, Result = "", ResultInStr = "";
-
+            Boolean BoolResult;
             stDate = Console.ReadLine();
             DateTime dt = Convert.ToDateTime(stDate);
-            /*Console.WriteLine(DateTime.MaxValue);
-            Console.WriteLine(DateTime.MinValue);*/
             ResultInStr = Convert.ToString(dt.DayOfWeek);
+            
 
             switch (ResultInStr)
             {
@@ -42,6 +51,8 @@ namespace dayOfWeek2
             }
             // Console.WriteLine("The day of the week for {0:d} is {1}.", dt, dt.DayOfWeek);
             Console.WriteLine("Введенная Вами дата приходится на " + Result);
+            BoolResult = DayCalc(dt);
+          Console.WriteLine(BoolResult);
             Console.ReadLine();
 
         }
