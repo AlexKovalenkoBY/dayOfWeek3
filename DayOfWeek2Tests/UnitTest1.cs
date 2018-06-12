@@ -13,9 +13,8 @@ namespace DayOfWeek2Tests
             DateTime dtest="01.06.2018";
             Boolean ItsWorkday = true;
             //act 
-
-            //вот тут у меня какой-то косяк с видимостью метода...
-            Boolean MyrealDay = dayOfWeek2.Program.DayCalc(dtest);
+            dayOfWeek2.Program myTestOj = new dayOfWeek2.Program();
+            bool MyrealDay = myTestOj.DayCalc(dtest);
             //assert
             Assert.AreEqual(ItsWorkday, MyrealDay);
         }
