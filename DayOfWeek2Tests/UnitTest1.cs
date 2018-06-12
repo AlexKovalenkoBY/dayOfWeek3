@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DayOfWeek2    ;
 
 namespace DayOfWeek2Tests
 {
@@ -11,10 +10,10 @@ namespace DayOfWeek2Tests
         public void MyDaytest1()
         {
             //arrange
-            DateTime dtest=01.06.2018;
+            DateTime dtest="01.06.2018";
             Boolean ItsWorkday = true;
             //act 
-            Boolean MyrealDay = Program.DayCalc();
+            Boolean MyrealDay = dayOfWeek2.Program.DayCalc(dtest);
             //assert
             Assert.AreEqual(ItsWorkday, MyrealDay);
         }

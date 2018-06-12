@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dayOfWeek2
-    {
-    class Program
+{
+    public class Program
     {
         public Boolean DayCalc(DateTime indata)
         {
@@ -18,9 +14,7 @@ namespace dayOfWeek2
 
         static void Main(string[] args)
         {
-            
-
-            Console.Write("Введите дату в формате ГГ/ММ/ДД или ДД/ММ/ГГГ (или как Вам будет удобно): ");
+          Console.Write("Введите дату в формате ГГ/ММ/ДД или ДД/ММ/ГГГ (или как Вам будет удобно): ");
             String stDate;
             Boolean BoolResult;
             stDate = Console.ReadLine();
