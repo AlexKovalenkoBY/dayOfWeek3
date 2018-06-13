@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Rules for dayOfWeek2" Description="Code analysis rules for dayOfWeek2.csproj." ToolsVersion="15.0">
+  <IncludeAll Action="Warning" />
+</RuleSet>
