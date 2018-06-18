@@ -19,9 +19,5 @@ namespace DayOfWeekClassLibrary
         Workdays = {"14/04/2018"};
    //DateTime[] = Hollydays {"01/05/2018","09/05/2018"};
     }
-    public struct ExcludeDay
-    {
-        DateTime.DayofWeek mydateexcl;
-        Boolean ItsWork;
-    }
+   
 }
