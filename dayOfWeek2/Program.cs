@@ -53,7 +53,8 @@ namespace dayOfWeek2
             //проверяем исключения
                 for (int i =0 ;i<3;i++)
                 { if (DateExclArray[i].dayexcl==dt)
-                    { BoolResult=BoolResult&DateExclArray[i].flag;}
+                    { if (DateExclArray[i].flag)  BoolResult=DateExclArray[i].flag;
+                         else BoolResult=BoolResult&DateExclArray[i].flag;}
                 }
              Console.WriteLine(BoolResult);
             Console.ReadLine();
