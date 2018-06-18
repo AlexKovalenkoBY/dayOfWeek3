@@ -12,12 +12,10 @@ namespace DayOfWeekClassLibrary
             else { return true; }
         }
     }
-    public class WorkAndHollidays
+    public class DateexClass
     {
-        DateTime Workdays []= new DateTime();
-        //DateTime[] = 
-        Workdays = {"14/04/2018"};
-   //DateTime[] = Hollydays {"01/05/2018","09/05/2018"};
+       public  DateTime dayexcl;
+        public Boolean flag;
     }
    
 }
