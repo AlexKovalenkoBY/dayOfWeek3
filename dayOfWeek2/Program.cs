@@ -1,64 +1,43 @@
 ﻿using System;
 using DayOfWeekClassLibrary;
+using System.Collections.Generic;
 
 
-namespace dayOfWeek2
+
+namespace DayOfWeek2
 {
     public class Program
     {
-        /*public Boolean DayCalc(DateTime indata)
-        {
-            /*int x = (int)indata.DayOfWeek;
-            if ((x == 0) || (x == 6))
-            { return false; }
-            else { return true; }
-
-           */
-            
-           /* DayOfWeek x = indata.DayOfWeek;
-                if ((x==DayOfWeek.Sunday)||(x==DayOfWeek.Saturday))
-                    { return false;}
-                else { return true; }
-             
-        }*/
         static void Main(string[] args)
         {
             const int MaxDays=3;
-        DateexClass[] DateExclArray = new DateexClass[3];
-            for (int i=0; i<MaxDays;i++)
-                {
-                    DateExclArray[i]= new DateexClass();
-                }
-            //---------------
-            //DateexClass DateExclArray[0]= new DateexClass();
-            DateExclArray[0].dayexcl = Convert.ToDateTime("01.05.2018");
-            DateExclArray[0].flag = false;
-            //--------------
-           // DateexClass DateExclArray[1]= new DateexClass();
-            DateExclArray[1].dayexcl = Convert.ToDateTime("03/07/2018");
-            DateExclArray[1].flag = false;
-            //--------------------
-            //DateexClass DateExclArray[1]= new DateexClass();
-            DateExclArray[2].dayexcl = Convert.ToDateTime("07/07/2018");
-            DateExclArray[2].flag = true;
+        //DateexClass[] DateExclArray = new DateexClass[3];
+        var DateExclArray = new List<DateexClass>(MaxDays);
+            DateExclArray.Capacity=MaxDays;
+            //  people.Add(new Person() { Name = "Том" });
+            DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("01/05/2018"), flag = false} );
+            DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("03/07/2018"), flag = false} );
+            DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("07/07/2018"), flag = true} );
 
-          Console.Write("Введите дату в формате ГГ/ММ/ДД или ДД/ММ/ГГГ (или как Вам будет удобно): ");
+           
+          Console.Write("Enter the date in the format YY/MM/DD or DD/MM/YYY (or as it will be convenient for you): ");
             String stDate;
             Boolean BoolResult;
             stDate = Console.ReadLine();
-            DateTime dt = Convert.ToDateTime(stDate);
-
-            MyLogicClass MyObj = new MyLogicClass() ;
-            BoolResult = MyObj.DayCalc(dt);
+            DateTime Dt = Convert.ToDateTime(stDate);
+              MyLogicClass MyObj = new MyLogicClass() ;
+            BoolResult = MyObj.DayCalc(Dt);
             //проверяем исключения
                 for (int i =0 ;i<3;i++)
-                { if (DateExclArray[i].dayexcl==dt)
-                    { if (DateExclArray[i].flag)  BoolResult=DateExclArray[i].flag;
-                         else BoolResult=BoolResult&DateExclArray[i].flag;}
+                { if (DateExclArray[i].dayexcl==Dt)
+                    {
+                        if (DateExclArray[i].flag)
+                            BoolResult =DateExclArray[i].flag;
+                         else BoolResult=BoolResult&DateExclArray[i].flag;
+                    }
                 }
              Console.WriteLine(BoolResult);
             Console.ReadLine();
-
         }
     }
 }
