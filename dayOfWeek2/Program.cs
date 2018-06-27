@@ -14,7 +14,7 @@ namespace DayOfWeek2
         //DateexClass[] DateExclArray = new DateexClass[3];
         var DateExclArray = new List<DateexClass>(MaxDays);
             DateExclArray.Capacity=MaxDays;
-            //  people.Add(new Person() { Name = "Том" });
+            
             DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("01/05/2018"), flag = false} );
             DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("03/07/2018"), flag = false} );
             DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("07/07/2018"), flag = true} );
@@ -25,17 +25,9 @@ namespace DayOfWeek2
             Boolean BoolResult;
             stDate = Console.ReadLine();
             DateTime Dt = Convert.ToDateTime(stDate);
-              MyLogicClass MyObj = new MyLogicClass() ;
+              MyLogicClass MyObj = new MyLogicClass(DateExclArray) ;
             BoolResult = MyObj.DayCalc(Dt);
-            //проверяем исключения
-                for (int i =0 ;i<3;i++)
-                { if (DateExclArray[i].dayexcl==Dt)
-                    {
-                        if (DateExclArray[i].flag)
-                            BoolResult =DateExclArray[i].flag;
-                         else BoolResult=BoolResult&DateExclArray[i].flag;
-                    }
-                }
+          
              Console.WriteLine(BoolResult);
             Console.ReadLine();
         }
