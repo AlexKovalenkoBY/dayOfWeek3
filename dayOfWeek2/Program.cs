@@ -22,7 +22,7 @@ namespace DayOfWeek2
            
           Console.Write("Enter the date in the format YY/MM/DD or DD/MM/YYY (or as it will be convenient for you): ");
             String stDate;
-            Boolean BoolResult;
+            
             stDate = Console.ReadLine();
             DateTime Dt = Convert.ToDateTime(stDate);
               MyLogicClass MyObj = new MyLogicClass(DateExclArray) ;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DayOfWeekClassLibrary
 {
@@ -14,6 +15,7 @@ namespace DayOfWeekClassLibrary
         public Boolean DayCalc(DateTime indata)
         {
   //проверяем исключения
+  Boolean BoolResult;
                 for (int i =0 ;i<3;i++)
                 { if (this.ExclusionDates[i].dayexcl==Dt)
                     {
