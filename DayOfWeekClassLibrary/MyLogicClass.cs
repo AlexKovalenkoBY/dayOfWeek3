@@ -15,16 +15,16 @@ namespace DayOfWeekClassLibrary
         public Boolean DayCalc(DateTime indata)
         {
   //проверяем исключения
-  Boolean BoolResult;
+        Boolean BoolResult=false;
                 for (int i =0 ;i<3;i++)
-                { if (this.ExclusionDates[i].dayexcl==Dt)
+                { if (this.ExclusionDates[i].dayexcl==indata)
                     {
                         if (this.ExclusionDates[i].flag)
-                            BoolResult =this.ExclusionDates[i].flag;
-                         else BoolResult=BoolResult&&this.ExclusionDates[i].flag;
+                            return this.ExclusionDates[i].flag;
+                       //  else BoolResult=BoolResult&&this.ExclusionDates[i].flag;
                     }
                 }            
-DayOfWeek x = indata.DayOfWeek;
+                    DayOfWeek x = indata.DayOfWeek;
             if ((x == DayOfWeek.Sunday) || (x == DayOfWeek.Saturday))
             { return false; }
             else { return true; }

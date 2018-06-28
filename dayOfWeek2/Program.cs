@@ -26,6 +26,7 @@ namespace DayOfWeek2
             stDate = Console.ReadLine();
             DateTime Dt = Convert.ToDateTime(stDate);
               MyLogicClass MyObj = new MyLogicClass(DateExclArray) ;
+            Boolean BoolResult;
             BoolResult = MyObj.DayCalc(Dt);
           
              Console.WriteLine(BoolResult);
