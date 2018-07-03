@@ -1,6 +1,8 @@
 ﻿using System;
 using DayOfWeekClassLibrary;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 
 
 
@@ -15,12 +17,23 @@ namespace DayOfWeek2
         var DateExclArray = new List<DateexClass>(MaxDays);
             DateExclArray.Capacity=MaxDays;
             
-            DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("01/05/2018"), flag = false} );
-            DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("03/07/2018"), flag = false} );
-            DateExclArray.Add(new DateexClass() {dayexcl = Convert.ToDateTime("07/07/2018"), flag = true} );
+           /* DateExclArray.Add(new DateexClass() {Dayexcl = Convert.ToDateTime("01/05/2018"), Flag = false} );
+            DateExclArray.Add(new DateexClass() {Dayexcl = Convert.ToDateTime("03/07/2018"), Flag = false} );
+            DateExclArray.Add(new DateexClass() {Dayexcl = Convert.ToDateTime("07/07/2018"), Flag = true} );
+*/
+            // передаем в конструктор тип класса
+            XmlSerializer formatter = new XmlSerializer(typeof(DateexClass));
+            using (FileStream fs = new FileStream("excldates.xml", FileMode.Open))
+            {
+                DateexClass[] excldates = (DateexClass[])formatter.Deserialize(fs);
 
-           
-          Console.Write("Enter the date in the format YY/MM/DD or DD/MM/YYY (or as it will be convenient for you): ");
+                foreach (DateexClass p in excldates)
+                {
+                    Console.WriteLine("дата: {0} --- флаг: {1} ", p.Dayexcl, p.Flag);
+                }
+            }
+            Console.ReadLine();
+            Console.Write("Enter the date in the format YY/MM/DD or DD/MM/YYY (or as it will be convenient for you): ");
             String stDate;
             
             stDate = Console.ReadLine();
@@ -33,4 +46,5 @@ namespace DayOfWeek2
             Console.ReadLine();
         }
     }
+
 }

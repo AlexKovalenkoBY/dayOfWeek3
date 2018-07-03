@@ -1,0 +1,15 @@
+<xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Days>  
+    <Day>
+    <Date>01/05/2018</Date>
+    <Flag>false</Flag>
+  </Day>
+  <Day>
+    <Date>03/07/2018</Date>
+    <Flag>false</Flag>
+  </Day>
+  <Day>
+    <Date>07/07/2018</Date>
+    <Flag>true</Flag>
+  </Day>
+</Days>
