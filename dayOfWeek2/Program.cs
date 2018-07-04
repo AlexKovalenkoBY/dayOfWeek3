@@ -22,12 +22,12 @@ namespace DayOfWeek2
             DateExclArray.Add(new DateexClass() {Dayexcl = Convert.ToDateTime("07/07/2018"), Flag = true} );
 */
             // передаем в конструктор тип класса
-            XmlSerializer formatter = new XmlSerializer(typeof(DateexClass));
+            XmlSerializer formatter = new XmlSerializer(typeof(DateexArrayClass));
             using (FileStream fs = new FileStream("excldates.xml", FileMode.Open))
             {
-                DateexClass[] excldates = (DateexClass[])formatter.Deserialize(fs);
+                var excldates = (DateexArrayClass)formatter.Deserialize(fs);
 
-                foreach (DateexClass p in excldates)
+                foreach (DateexClass p in excldates.DateexArray)
                 {
                     Console.WriteLine("дата: {0} --- флаг: {1} ", p.Dayexcl, p.Flag);
                 }

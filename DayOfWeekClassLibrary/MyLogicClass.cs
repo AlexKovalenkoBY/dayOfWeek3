@@ -34,8 +34,8 @@ namespace DayOfWeekClassLibrary
     [Serializable]
     public class DateexClass
     {
-       public  DateTime Dayexcl { get; set; }
-        public Boolean Flag { get; set; }
+       public  DateTime Dayexcl;
+        public Boolean Flag;
         public DateexClass()
         { }
         public DateexClass(DateTime dayexcl, Boolean flag)
@@ -45,6 +45,12 @@ namespace DayOfWeekClassLibrary
         }
 
     }
+    [Serializable]
+    public class DateexArrayClass
+        {
+        public DateexClass[] DateexArray;
+
+        }
   /* public class MySerializeClass
         {
 
