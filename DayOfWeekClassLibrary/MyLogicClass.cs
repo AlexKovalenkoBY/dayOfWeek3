@@ -2,27 +2,30 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Threading.Tasks;
+using System.IO;
   
 namespace DayOfWeekClassLibrary
 {
     public class MyLogicClass
     {
-        private List<DateexClass>  ExclusionDates;
+        private IDateExclusionsProvider _dateExclusionsProvider;
         //constructor 
-        public  MyLogicClass (List<DateexClass> exclusiondates) 
+        public  MyLogicClass (IDateExclusionsProvider exclusionDatesProvider) 
         { 
-            this.ExclusionDates = exclusiondates;
+            this._dateExclusionsProvider = exclusionDatesProvider;
         }
         public Boolean DayCalc(DateTime indata)
         {
          //проверяем исключения
          //если дата в исключениях, то выводим ответ из исключений
-        Boolean BoolResult=false;
+        // Boolean BoolResult=false;
+        List<DateexClass> mylist= this._dateExclusionsProvider.GetExclusionDates();
+
                 for (int i =0 ;i<3;i++)
-                { if (this.ExclusionDates[i].Dayexcl==indata)
-                    {
-                        if (this.ExclusionDates[i].Flag)
-                            return this.ExclusionDates[i].Flag;
+                { if (mylist[i].Dayexcl==indata)
+                                        {
+                        if (mylist[i].Flag)
+                            return mylist[i].Flag;
                      }
                 }            
                     DayOfWeek x = indata.DayOfWeek;
@@ -44,7 +47,12 @@ namespace DayOfWeekClassLibrary
             Flag = flag;
         }
 
-    }
+          
+
+       
+    } //end of class XmlFileDateExclusionsProvider: IDateExclusionsProvider 
+
+                    
     [Serializable]
     public class DateexArrayClass
         {
