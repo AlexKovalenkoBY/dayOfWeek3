@@ -10,7 +10,7 @@ namespace DayOfWeek2
 {
     static class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
           var provider = new XmlFileDateExclusionsProvider();
                 Console.Write("Enter the date in the format YY/MM/DD or DD/MM/YYY (or as it will be convenient for you): ");
