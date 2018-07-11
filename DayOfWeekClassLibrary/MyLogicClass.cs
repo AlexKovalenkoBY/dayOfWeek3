@@ -18,19 +18,18 @@ namespace DayOfWeekClassLibrary
         {
          //проверяем исключения
          //если дата в исключениях, то выводим ответ из исключений
-        // Boolean BoolResult=false;
-        List<DateexClass> mylist= this._dateExclusionsProvider.GetExclusionDates();
-
-                for (int i =0 ;i<3;i++)
+         // Boolean BoolResult=false;
+         List<DateexClass> mylist= this._dateExclusionsProvider.GetExclusionDates();
+              for (int i=0 ;i< mylist.Capacity; i++)
                 { if (mylist[i].Dayexcl==indata)
                      {
                        return mylist[i].Flag;
                      }
                 }            
-                    DayOfWeek x = indata.DayOfWeek;
-            if ((x == DayOfWeek.Sunday) || (x == DayOfWeek.Saturday))
-            { return false; }
-            else { return true; }
+                  DayOfWeek x = indata.DayOfWeek;
+                    if ((x == DayOfWeek.Sunday) || (x == DayOfWeek.Saturday))
+                       { return false; }
+                    else { return true; }
         }
     }
     [Serializable]
@@ -45,19 +44,10 @@ namespace DayOfWeekClassLibrary
             Dayexcl = dayexcl;
             Flag = flag;
         }
-
-          
-
-       
     } //end of class XmlFileDateExclusionsProvider: IDateExclusionsProvider 
-
-                    
-    [Serializable]
+   [Serializable]
     public class DateexArrayClass
         {
-        public DateexClass[] DateexArray;
-
+          public DateexClass[] DateexArray;
         }
- 
-   
-}
+ }
