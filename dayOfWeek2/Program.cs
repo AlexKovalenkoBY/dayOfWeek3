@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace DayOfWeek2
 {
-    public class Program
+    static class Program
     {
         static void Main(string[] args)
         {

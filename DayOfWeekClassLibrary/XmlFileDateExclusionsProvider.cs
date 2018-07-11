@@ -11,10 +11,10 @@ namespace DayOfWeekClassLibrary
         // implementation}
         public List<DateexClass> GetExclusionDates()
         {
-            const int MaxDays = 3;
+            //const int MaxDays = 3;
             //DateexClass[] DateExclArray = new DateexClass[3];
-            var DateExclArray = new List<DateexClass>(MaxDays);
-            DateExclArray.Capacity = MaxDays;
+           // var DateExclArray = new List<DateexClass>(MaxDays);
+            //DateExclArray.Capacity = MaxDays;
 
             // передаем в конструктор тип класса
             XmlSerializer formatter = new XmlSerializer(typeof(DateexArrayClass));
