@@ -23,9 +23,8 @@ namespace DayOfWeekClassLibrary
 
                 for (int i =0 ;i<3;i++)
                 { if (mylist[i].Dayexcl==indata)
-                                        {
-                        if (mylist[i].Flag)
-                            return mylist[i].Flag;
+                     {
+                       return mylist[i].Flag;
                      }
                 }            
                     DayOfWeek x = indata.DayOfWeek;
