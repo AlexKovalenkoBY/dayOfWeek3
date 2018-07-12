@@ -9,7 +9,7 @@ namespace DayOfWeek2Tests
     public class MyLogicTest1
     {
         [TestMethod]
-        public void _mytest()
+        public void Mytest()
         {
             //arrange
             DateTime dtest=DateTime.Parse("01.06.2018");

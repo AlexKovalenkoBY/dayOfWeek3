@@ -44,7 +44,7 @@ namespace DayOfWeekClassLibrary
             Dayexcl = dayexcl;
             Flag = flag;
         }
-    } //end of class XmlFileDateExclusionsProvider: IDateExclusionsProvider 
+    } 
    [Serializable]
     public class DateexArrayClass
         {
