@@ -32,7 +32,7 @@ namespace DayOfWeekClassLibrary
                     else { return true; }
         }
     }
-    [Serializable]
+   [Serializable]
     public class DateexClass
     {
        public  DateTime Dayexcl;
@@ -46,8 +46,10 @@ namespace DayOfWeekClassLibrary
         }
     } 
    [Serializable]
+
     public class DateexArrayClass
         {
-          public DateexClass[] DateexArray;
+        //[XmlIgnore]
+        public DateexClass[] DateexArray;
         }
  }

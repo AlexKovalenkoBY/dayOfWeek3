@@ -26,6 +26,10 @@ namespace DayOfWeek2
                 Boolean BoolResult = MyObj.DayCalc(Dt);
               Console.WriteLine(BoolResult);
             Console.ReadLine();
-        }
+
+
+
+
     }
+}
 }
