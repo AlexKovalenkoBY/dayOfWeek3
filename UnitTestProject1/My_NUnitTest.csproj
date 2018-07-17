@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="MyNunitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestExclusionsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

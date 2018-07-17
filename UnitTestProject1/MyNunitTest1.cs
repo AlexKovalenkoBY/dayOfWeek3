@@ -3,11 +3,10 @@
 using DayOfWeekClassLibrary;
 using System.Globalization;
 using NUnit.Framework;
-
-
+using UnitTestProject1;
 
 namespace MyNunitTestSpace
-    {
+{
     public class MyNunitTest1
     {
         [Test]
@@ -17,7 +16,9 @@ namespace MyNunitTestSpace
             DateTime dtest = DateTime.Parse("01.06.2018", CultureInfo.InvariantCulture);
             Boolean ItsWorkday = true;
             //act 
-            var _test_provider = new XmlFileDateExclusionsProvider();
+            var _test_provider = new TestExclusionsProvider(new[] { new DateexClass(dtest, true) });
+
+            //
             MyLogicClass myTestObj = new MyLogicClass(_test_provider);
             bool MyrealDay = myTestObj.DayCalc(dtest);
             //assert
