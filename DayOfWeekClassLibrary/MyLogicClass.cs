@@ -43,11 +43,11 @@ namespace DayOfWeekClassLibrary
     {
         public DateTime Dayexcl;
         public Boolean Flag;
-        public DateexClass()
+        public DateexClass() //constructor
         {
         }
         public DateexClass(DateTime dayexcl, Boolean flag)
-        {
+        { //
             Dayexcl = dayexcl;
             Flag = flag;
         }
