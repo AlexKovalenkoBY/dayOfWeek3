@@ -13,6 +13,7 @@ namespace DayOfWeekClassLibrary
         public MyLogicClass(IDateExclusionsProvider exclusionDatesProvider)
         {
             this._dateExclusionsProvider = exclusionDatesProvider;
+
         }
         public Boolean DayCalc(DateTime indata)
         {

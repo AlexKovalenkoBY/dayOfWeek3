@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace UnitTestProject1
 {
@@ -21,4 +22,6 @@ namespace UnitTestProject1
             return new List<DateexClass>(_exclusionDates);
         }
     }
+
+    
 }
