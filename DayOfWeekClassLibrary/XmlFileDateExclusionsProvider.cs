@@ -21,7 +21,6 @@ namespace DayOfWeekClassLibrary
 
             }
             return new List<DateexClass>(excldates.DateexArray);
-
         }
 
     }
@@ -57,7 +56,7 @@ namespace DayOfWeekClassLibrary
             // передаем в конструктор тип класса
             DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(DateexArrayClass));
             DateexArrayClass excldates;
-            using (FileStream fs = new FileStream("d:\\tmp\\myexcldates.json", FileMode.Open))
+            using (FileStream fs = new FileStream("d:\\tmp\\excldates.json", FileMode.Open))
             {
                 excldates = (DateexArrayClass)formatter.ReadObject(fs); ////!!
             }

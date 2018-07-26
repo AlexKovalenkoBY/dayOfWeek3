@@ -13,8 +13,8 @@ namespace DayOfWeek2
     {
         static void Main()
         {
-            var provider = new XmlFileDateExclusionsProvider();
-
+            // var provider = new XmlFileDateExclusionsProvider();
+            var provider = new FromJSonFileDateExclusionsProvider();
           //  var jsonprovider = new FromXML2JSonFileDateExclusionsProvider();
           //  jsonprovider.GetExclusionDates();
 
