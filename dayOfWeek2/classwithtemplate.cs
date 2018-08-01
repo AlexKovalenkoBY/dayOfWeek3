@@ -35,5 +35,6 @@ namespace dayOfWeek2
         }
 
         protected abstract string GetFilePath();//TODO
+
     }
 }
