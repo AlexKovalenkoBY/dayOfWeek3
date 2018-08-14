@@ -1,16 +1,19 @@
-﻿using System;
+﻿using DayOfWeekClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 namespace dayOfWeek2
 {
    public abstract class FileDateExclusionsProvider : IDateExclusionsProvider
     {
-        protected abstract XmlObjectSerializer CreateSerializer();
+        protected abstract XmlObjectSerializer CreateSerializer(); //абстрактный метод
 
-        protected abstract string GetFilePath();
+        protected abstract string GetFilePath(); //абстрактный метод
 
         // Template Method Pattern!!!
         public List<DateexClass> GetExclusionDates()
@@ -26,7 +29,7 @@ namespace dayOfWeek2
             return new List<DateexClass>(excldates.DateexArray);
         }
     }
-
+    //
     public class FromJSonFileDateExclusionsProvider : FileDateExclusionsProvider
     {
         protected override XmlObjectSerializer CreateSerializer()
@@ -34,7 +37,29 @@ namespace dayOfWeek2
             return new DataContractJsonSerializer(typeof(DateexArrayClass));
         }
 
-        protected abstract string GetFilePath();//TODO
+        protected override string GetFilePath() //смущает меня protected abstract....
+        {
+            return "d:\\tmp\\excldates.json";
+           
+        }
+    }
+    public class FromXMLFileDateExclusionsProvider : FileDateExclusionsProvider
+    {
+        protected XmlObjectSerializer CreateSerializer()
+        {
+            return new DataContractJsonSerializer(typeof(DateexArrayClass));
+        }
 
+        protected override string GetFilePath() //смущает меня protected abstract....
+        {
+           return "d:\\tmp\\excldates.xml";
+
+                               
+           /* {
+                excldates = (DateexArrayClass)formatter.ReadObject(fs); ////!!
+               } */
+        }
     }
 }
+    
+
