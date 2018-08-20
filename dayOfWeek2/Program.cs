@@ -17,9 +17,18 @@ namespace DayOfWeek2
             if ((args.Length == 0)||(args[0]!="xml") || (args[0] != "json"))
             {
                 System.Console.WriteLine("Please enter a string argument: 'json' or 'xml'.");
+                Console.ReadLine();
+                return;
             }
-            // var provider = new XmlFileDateExclusionsProvider();
-            var provider = new FromJSonFileDateExclusionsProvider();
+            if (args[0] =="xml")
+            {
+                var provider = new XmlFileDateExclusionsProvider();
+            }
+            if(args[0] =="json")
+            {
+                var provider = new FromJSonFileDateExclusionsProvider();
+            }
+            
           //  var jsonprovider = new FromXML2JSonFileDateExclusionsProvider();
           //  jsonprovider.GetExclusionDates();
 
