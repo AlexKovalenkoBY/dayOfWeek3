@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Xml.Serialization;
+using System.Xml.Serialization;
 using System.Runtime.Serialization;
+using System.Runtime;
+using System.IO;
+using System.Runtime.Serialization.Json;
 
 namespace dayOfWeek2
 {
@@ -45,7 +48,7 @@ namespace dayOfWeek2
     }
     public class FromXMLFileDateExclusionsProvider : FileDateExclusionsProvider
     {
-        protected XmlObjectSerializer CreateSerializer()
+        protected override XmlObjectSerializer CreateSerializer()
         {
             return new DataContractJsonSerializer(typeof(DateexArrayClass));
         }
@@ -55,9 +58,7 @@ namespace dayOfWeek2
            return "d:\\tmp\\excldates.xml";
 
                                
-           /* {
-                excldates = (DateexArrayClass)formatter.ReadObject(fs); ////!!
-               } */
+           
         }
     }
 }
