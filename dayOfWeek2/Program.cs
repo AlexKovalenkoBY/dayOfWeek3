@@ -20,13 +20,15 @@ namespace DayOfWeek2
                 Console.ReadLine();
                 return;
             }
+            IDateExclusionsProvider provider=null;
+
             if (args[0] =="xml")
             {
-                var provider = new XmlFileDateExclusionsProvider();
+                 provider = new XmlFileDateExclusionsProvider();
             }
             if(args[0] =="json")
             {
-                var provider = new FromJSonFileDateExclusionsProvider();
+                 provider = new FromJSonFileDateExclusionsProvider();
             }
             
           //  var jsonprovider = new FromXML2JSonFileDateExclusionsProvider();
